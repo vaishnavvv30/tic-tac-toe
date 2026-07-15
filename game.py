@@ -138,6 +138,7 @@ def find_best_move(b, level):
 board_el = document['board']
 bubble_el = document['bubble']
 fighter_player = document['fighterPlayer']
+fighter_player_name = document['fighterPlayerName']
 fighter_rival = document['fighterRival']
 fighter_rival_name = document['fighterRivalName']
 fighter_rival_avatar = document['fighterRivalAvatar']
@@ -385,14 +386,16 @@ def set_mode(m):
             b.classList.remove('active')
 
     if m == 'pvp':
-        fighter_rival_name.text = 'Player 2 · O'
+        fighter_player_name.text = 'Player 1'
+        fighter_rival_name.text = 'Player 2'
         fighter_rival_avatar.html = HUMAN2_AVATAR
         score_label_x.text = 'P1'
         score_label_o.text = 'P2'
         rank_select.classList.add('disabled')
         rank_caption.text = 'AI difficulty · switch to VS AI to use'
     else:
-        fighter_rival_name.text = 'Rival AI · O'
+        fighter_player_name.text = 'You'
+        fighter_rival_name.text = 'Rival AI'
         fighter_rival_avatar.html = ROBOT_AVATAR
         score_label_x.text = 'You'
         score_label_o.text = 'Rival'
